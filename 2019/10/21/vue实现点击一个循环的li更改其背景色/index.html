@@ -6,22 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://zhangzf99.github.io">
-  <title>http | zhangzf的个人博客</title>
+  <title>vue实现点击一个循环的li更改其背景色 | zhangzf的个人博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="http">
-<meta name="keywords" content="http">
+  <meta name="description" content="vue实现点击一个循环的li更改其背景色">
+<meta name="keywords" content="vue 改背景色">
 <meta property="og:type" content="article">
-<meta property="og:title" content="http">
-<meta property="og:url" content="https://zhangzf99.github.io/2019/10/15/http/index.html">
+<meta property="og:title" content="vue实现点击一个循环的li更改其背景色">
+<meta property="og:url" content="https://zhangzf99.github.io/2019/10/21/vue实现点击一个循环的li更改其背景色/index.html">
 <meta property="og:site_name" content="zhangzf的个人博客">
-<meta property="og:description" content="http">
+<meta property="og:description" content="vue实现点击一个循环的li更改其背景色">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-16T02:50:34.608Z">
+<meta property="og:updated_time" content="2019-10-21T02:08:38.512Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="http">
-<meta name="twitter:description" content="http">
+<meta name="twitter:title" content="vue实现点击一个循环的li更改其背景色">
+<meta name="twitter:description" content="vue实现点击一个循环的li更改其背景色">
   
     <link rel="alternative" href="/atom.xml" title="zhangzf的个人博客" type="application/atom+xml">
   
@@ -173,14 +173,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-http" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-vue实现点击一个循环的li更改其背景色" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      http
+      vue实现点击一个循环的li更改其背景色
     </h1>
   
 
@@ -192,8 +192,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2019/10/15/http/" class="archive-article-date">
-        <time datetime="2019-10-15T09:18:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-15</time>
+<a href="/2019/10/21/vue实现点击一个循环的li更改其背景色/" class="archive-article-date">
+        <time datetime="2019-10-21T02:05:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-21</time>
 </a>
 
   
@@ -206,7 +206,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1字</span>
+      <span class="post-count">177字</span>
     </span>
   </span>
 
@@ -226,7 +226,16 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="http"><a href="#http" class="headerlink" title="http"></a>http</h1><a id="more"></a>
+    <h1 id="vue实现点击一个循环的li更改其背景色"><a href="#vue实现点击一个循环的li更改其背景色" class="headerlink" title="vue实现点击一个循环的li更改其背景色"></a>vue实现点击一个循环的li更改其背景色</h1><a id="more"></a>
+
+<p><strong>li由遍历得到，实现点击当前li更改背景色，其他的li样式不变</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 使用三目运算符 :class</span><br><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;div&gt;</span><br><span class="line">		&lt;ul&gt;</span><br><span class="line">			&lt;li v-for=&quot;item in info&quot; :key=&quot;item.id&quot; @click=&quot;change(item)&quot; :class=&apos;item.id==selected?&quot;selected&quot;:&quot;&quot;&apos;&gt;&#123;&#123;item.name&#125;&#125;&lt;/li&gt;</span><br><span class="line">		&lt;/ul&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      info:[&#123;</span><br><span class="line">        id:<span class="number">1</span>,</span><br><span class="line">        name:<span class="string">'张三'</span></span><br><span class="line">      &#125;,&#123;</span><br><span class="line">        id:<span class="number">2</span>,</span><br><span class="line">        name:<span class="string">'李四'</span></span><br><span class="line">      &#125;,&#123;</span><br><span class="line">        id:<span class="number">3</span>,</span><br><span class="line">        name:<span class="string">'王五'</span></span><br><span class="line">      &#125;,&#123;</span><br><span class="line">        id:<span class="number">4</span>,</span><br><span class="line">        name:<span class="string">'丁二'</span></span><br><span class="line">      &#125;,&#123;</span><br><span class="line">        id:<span class="number">5</span>,</span><br><span class="line">        name:<span class="string">'魏潇'</span></span><br><span class="line">      &#125;],</span><br><span class="line">      selected:<span class="number">-1</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    change(item)&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(item)</span><br><span class="line">      <span class="keyword">this</span>.selected=item.id;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.selected</span>&#123;</span><br><span class="line">  <span class="attribute">color</span>:red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
     
 
     
@@ -240,7 +249,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://zhangzf99.github.io/2019/10/15/http/" title="http" target="_blank">https://zhangzf99.github.io/2019/10/15/http/</a>
+          <a href="https://zhangzf99.github.io/2019/10/21/vue实现点击一个循环的li更改其背景色/" title="vue实现点击一个循环的li更改其背景色" target="_blank">https://zhangzf99.github.io/2019/10/21/vue实现点击一个循环的li更改其背景色/</a>
         </li>
         <li>
           <strong>版权声明： </strong>
@@ -259,7 +268,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">http</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue 改背景色</a>
         		</li>
       		
 		</ul>
@@ -315,7 +324,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://zhangzf99.github.io/2019/10/15/http/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://zhangzf99.github.io/2019/10/21/vue实现点击一个循环的li更改其背景色/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -330,18 +339,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/10/15/mvc-mvvm区别/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/10/21/更改vue-element-admin主题颜色/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          mvc mvvm区别
+          更改vue-element-admin主题颜色
         
       </div>
     </a>
   
   
-    <a href="/2019/10/15/promise/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">promise</div>
+    <a href="/2019/10/21/bootcdn复制/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">bootcdn复制</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -368,7 +377,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#http"><span class="toc-number">1.</span> <span class="toc-text">http</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#vue实现点击一个循环的li更改其背景色"><span class="toc-number">1.</span> <span class="toc-text">vue实现点击一个循环的li更改其背景色</span></a></li></ol>
                     </div>
                 </span>
             </div>

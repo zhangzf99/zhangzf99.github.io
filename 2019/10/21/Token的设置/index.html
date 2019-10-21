@@ -6,22 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://zhangzf99.github.io">
-  <title>http | zhangzf的个人博客</title>
+  <title>Token的设置 | zhangzf的个人博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="http">
-<meta name="keywords" content="http">
+  <meta name="description" content="token">
+<meta name="keywords" content="token">
 <meta property="og:type" content="article">
-<meta property="og:title" content="http">
-<meta property="og:url" content="https://zhangzf99.github.io/2019/10/15/http/index.html">
+<meta property="og:title" content="Token的设置">
+<meta property="og:url" content="https://zhangzf99.github.io/2019/10/21/Token的设置/index.html">
 <meta property="og:site_name" content="zhangzf的个人博客">
-<meta property="og:description" content="http">
+<meta property="og:description" content="token">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-16T02:50:34.608Z">
+<meta property="og:updated_time" content="2019-10-21T02:01:31.366Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="http">
-<meta name="twitter:description" content="http">
+<meta name="twitter:title" content="Token的设置">
+<meta name="twitter:description" content="token">
   
     <link rel="alternative" href="/atom.xml" title="zhangzf的个人博客" type="application/atom+xml">
   
@@ -173,14 +173,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-http" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Token的设置" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      http
+      Token的设置
     </h1>
   
 
@@ -192,8 +192,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2019/10/15/http/" class="archive-article-date">
-        <time datetime="2019-10-15T09:18:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-15</time>
+<a href="/2019/10/21/Token的设置/" class="archive-article-date">
+        <time datetime="2019-10-21T01:58:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-21</time>
 </a>
 
   
@@ -206,7 +206,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1字</span>
+      <span class="post-count">365字</span>
     </span>
   </span>
 
@@ -226,7 +226,25 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="http"><a href="#http" class="headerlink" title="http"></a>http</h1><a id="more"></a>
+    <h1 id="token"><a href="#token" class="headerlink" title="token"></a>token</h1><a id="more"></a>
+
+<h2 id="登录跳转及token设置"><a href="#登录跳转及token设置" class="headerlink" title="登录跳转及token设置"></a>登录跳转及token设置</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> params=&#123;</span><br><span class="line">  <span class="string">"username"</span>:<span class="keyword">this</span>.username,</span><br><span class="line">  <span class="string">"password"</span>:<span class="keyword">this</span>.password</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 将params传给后台，响应成功拿到token</span></span><br><span class="line"><span class="comment">// 将data中定义的token设置为后端返回的token</span></span><br><span class="line"><span class="keyword">this</span>.token = res.data.token</span><br><span class="line"><span class="keyword">this</span>.setCookie()</span><br><span class="line"><span class="keyword">this</span>.handleClick()</span><br></pre></td></tr></table></figure>
+
+<p><strong>setCookie() 创建cookie</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">setCookie(cname,cvalue,exdays)&#123;</span><br><span class="line">  <span class="built_in">document</span>.cookie = <span class="string">'Token'</span>+<span class="keyword">this</span>.token</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// javascript中可以使用document.cookie属性来创建、读取及删除cookie</span></span><br><span class="line"><span class="comment">// javascript创建cookie</span></span><br><span class="line"><span class="built_in">document</span>.cookie = <span class="string">"username=John Doe"</span>;</span><br><span class="line"><span class="comment">// 为cookie添加一个过期时间(以UTC或GMT时间)。默认情况下，cookie在浏览器关闭时删除</span></span><br><span class="line"><span class="built_in">document</span>.cookie-<span class="string">"username=John Doe;expires=Thu,18 Dec 2043 12:00:00 GMT"</span>;</span><br><span class="line"><span class="comment">// 可以使用path参数告诉浏览器cookie的路径。默认情况下，cookie属于当前页面</span></span><br><span class="line"><span class="built_in">document</span>.cookie = <span class="string">"username=Jhon Doe;expires=Thu, 18 Dec 2043 12:00:00 GMT; path=/"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// javascript读取cookie</span></span><br><span class="line"><span class="comment">// 显示格式 cookie1=value1;cookie2=value2;cookie3=value3</span></span><br><span class="line"><span class="keyword">var</span> x = <span class="built_in">document</span>.cookie;</span><br><span class="line"></span><br><span class="line"><span class="comment">// javascript修改cookie</span></span><br><span class="line"><span class="comment">// 类似于创建cookie，旧的cookie将被覆盖</span></span><br><span class="line"><span class="built_in">document</span>.cookie = <span class="string">"username=Jhon Doe;expires=Thu, 18 Dec 2043 12:00:00 GMT; path=/"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// javascript删除cookie</span></span><br><span class="line"><span class="comment">// 只需设置expires参数为以前的时间即可</span></span><br><span class="line"><span class="comment">// 注意：删除时不必指定cookie值</span></span><br><span class="line"><span class="built_in">document</span>.cookie = <span class="string">"username=;expires=Thu, 18 Dec 1970 12:00:00 GMT"</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>handleClick()</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">handleClick()&#123;</span><br><span class="line">  <span class="comment">// 设置验证</span></span><br><span class="line">  axios.defaults.headers.common[<span class="string">'Authorization'</span>] = conf.getCookie(<span class="string">'Token'</span>);</span><br><span class="line">  <span class="comment">// 页面跳转</span></span><br><span class="line">  <span class="keyword">this</span>.$router.push(<span class="string">'/simpleIndex'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>获取cookie</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取cookie</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCookie</span>(<span class="params">cname</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> str = <span class="built_in">document</span>.cookie;</span><br><span class="line">  <span class="keyword">if</span>(str.indexOf(<span class="string">';'</span>))&#123;</span><br><span class="line">    <span class="keyword">let</span> arr = str.split(<span class="string">";"</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</span><br><span class="line">      <span class="keyword">let</span> item = arr[i].split(<span class="string">"="</span>);</span><br><span class="line">      <span class="keyword">if</span>(item[<span class="number">0</span>]==cname)&#123;</span><br><span class="line">        <span class="keyword">return</span> cname+<span class="string">' '</span>+item[<span class="number">1</span>];</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> name = cname+<span class="string">'='</span>;</span><br><span class="line">    <span class="keyword">let</span> ca = <span class="built_in">document</span>.cookie.repalce(<span class="regexp">/=/</span>,<span class="string">' '</span>);</span><br><span class="line">    <span class="keyword">return</span> ca;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">''</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>清除cookie</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 	清除cookie</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">clearCookie</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">  setCookie(name,<span class="string">""</span>,<span class="number">-1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
     
 
     
@@ -240,7 +258,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://zhangzf99.github.io/2019/10/15/http/" title="http" target="_blank">https://zhangzf99.github.io/2019/10/15/http/</a>
+          <a href="https://zhangzf99.github.io/2019/10/21/Token的设置/" title="Token的设置" target="_blank">https://zhangzf99.github.io/2019/10/21/Token的设置/</a>
         </li>
         <li>
           <strong>版权声明： </strong>
@@ -259,7 +277,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">http</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">token</a>
         		</li>
       		
 		</ul>
@@ -315,7 +333,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://zhangzf99.github.io/2019/10/15/http/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://zhangzf99.github.io/2019/10/21/Token的设置/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -330,18 +348,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/10/15/mvc-mvvm区别/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/10/21/git-常用命令/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          mvc mvvm区别
+          git 常用命令
         
       </div>
     </a>
   
   
-    <a href="/2019/10/15/promise/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">promise</div>
+    <a href="/2019/10/21/vue路由变化页面不刷新问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vue路由变化页面不刷新问题</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -368,7 +386,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#http"><span class="toc-number">1.</span> <span class="toc-text">http</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#token"><span class="toc-number">1.</span> <span class="toc-text">token</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#登录跳转及token设置"><span class="toc-number">1.1.</span> <span class="toc-text">登录跳转及token设置</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>

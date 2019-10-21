@@ -6,22 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://zhangzf99.github.io">
-  <title>http | zhangzf的个人博客</title>
+  <title>更改vue-element-admin主题颜色 | zhangzf的个人博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="http">
-<meta name="keywords" content="http">
+  <meta name="description" content="更改vue-element-admin主题颜色">
+<meta name="keywords" content="vue 主题 vue-element-admin">
 <meta property="og:type" content="article">
-<meta property="og:title" content="http">
-<meta property="og:url" content="https://zhangzf99.github.io/2019/10/15/http/index.html">
+<meta property="og:title" content="更改vue-element-admin主题颜色">
+<meta property="og:url" content="https://zhangzf99.github.io/2019/10/21/更改vue-element-admin主题颜色/index.html">
 <meta property="og:site_name" content="zhangzf的个人博客">
-<meta property="og:description" content="http">
+<meta property="og:description" content="更改vue-element-admin主题颜色">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-16T02:50:34.608Z">
+<meta property="og:updated_time" content="2019-10-21T02:11:16.769Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="http">
-<meta name="twitter:description" content="http">
+<meta name="twitter:title" content="更改vue-element-admin主题颜色">
+<meta name="twitter:description" content="更改vue-element-admin主题颜色">
   
     <link rel="alternative" href="/atom.xml" title="zhangzf的个人博客" type="application/atom+xml">
   
@@ -173,14 +173,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-http" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-更改vue-element-admin主题颜色" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      http
+      更改vue-element-admin主题颜色
     </h1>
   
 
@@ -192,8 +192,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2019/10/15/http/" class="archive-article-date">
-        <time datetime="2019-10-15T09:18:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-15</time>
+<a href="/2019/10/21/更改vue-element-admin主题颜色/" class="archive-article-date">
+        <time datetime="2019-10-21T02:09:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-21</time>
 </a>
 
   
@@ -206,7 +206,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1字</span>
+      <span class="post-count">86字</span>
     </span>
   </span>
 
@@ -226,7 +226,17 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="http"><a href="#http" class="headerlink" title="http"></a>http</h1><a id="more"></a>
+    <h1 id="更改vue-element-admin主题颜色"><a href="#更改vue-element-admin主题颜色" class="headerlink" title="更改vue-element-admin主题颜色"></a>更改vue-element-admin主题颜色</h1><a id="more"></a>
+
+<p><strong>安装依赖包</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cnpm i element-theme -g</span><br><span class="line">cnpm i element-theme-chalk -g</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">et -i</span><br><span class="line"><span class="comment">// 将element-variables.sass文件移动到src下</span></span><br><span class="line">在该.sass文件下最后添加代码</span><br><span class="line"><span class="comment">// 改变icon字体的路径，必须</span></span><br><span class="line">$--font-path:<span class="string">'~element-ui/lib/theme-chalk/fonts'</span>;</span><br><span class="line">@<span class="keyword">import</span> <span class="string">"~element-ui/packages/theme-chalk/src/index"</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>在main.js导入</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'./element-variables.scss'</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'./reset.css'</span></span><br></pre></td></tr></table></figure>
+
+
     
 
     
@@ -240,7 +250,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://zhangzf99.github.io/2019/10/15/http/" title="http" target="_blank">https://zhangzf99.github.io/2019/10/15/http/</a>
+          <a href="https://zhangzf99.github.io/2019/10/21/更改vue-element-admin主题颜色/" title="更改vue-element-admin主题颜色" target="_blank">https://zhangzf99.github.io/2019/10/21/更改vue-element-admin主题颜色/</a>
         </li>
         <li>
           <strong>版权声明： </strong>
@@ -259,7 +269,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">http</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">vue 主题 vue-element-admin</a>
         		</li>
       		
 		</ul>
@@ -315,7 +325,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://zhangzf99.github.io/2019/10/15/http/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://zhangzf99.github.io/2019/10/21/更改vue-element-admin主题颜色/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -330,18 +340,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/10/15/mvc-mvvm区别/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/10/21/vue更改背景图高度/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          mvc mvvm区别
+          vue更改背景图高度
         
       </div>
     </a>
   
   
-    <a href="/2019/10/15/promise/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">promise</div>
+    <a href="/2019/10/21/vue实现点击一个循环的li更改其背景色/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vue实现点击一个循环的li更改其背景色</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -368,7 +378,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#http"><span class="toc-number">1.</span> <span class="toc-text">http</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#更改vue-element-admin主题颜色"><span class="toc-number">1.</span> <span class="toc-text">更改vue-element-admin主题颜色</span></a></li></ol>
                     </div>
                 </span>
             </div>

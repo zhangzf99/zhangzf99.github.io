@@ -6,22 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://zhangzf99.github.io">
-  <title>http | zhangzf的个人博客</title>
+  <title>vue路由变化页面不刷新问题 | zhangzf的个人博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="http">
-<meta name="keywords" content="http">
+  <meta name="description" content="vue路由变化页面不刷新">
+<meta name="keywords" content="vue 路由 刷新">
 <meta property="og:type" content="article">
-<meta property="og:title" content="http">
-<meta property="og:url" content="https://zhangzf99.github.io/2019/10/15/http/index.html">
+<meta property="og:title" content="vue路由变化页面不刷新问题">
+<meta property="og:url" content="https://zhangzf99.github.io/2019/10/21/vue路由变化页面不刷新问题/index.html">
 <meta property="og:site_name" content="zhangzf的个人博客">
-<meta property="og:description" content="http">
+<meta property="og:description" content="vue路由变化页面不刷新">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-16T02:50:34.608Z">
+<meta property="og:updated_time" content="2019-10-21T01:47:49.792Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="http">
-<meta name="twitter:description" content="http">
+<meta name="twitter:title" content="vue路由变化页面不刷新问题">
+<meta name="twitter:description" content="vue路由变化页面不刷新">
   
     <link rel="alternative" href="/atom.xml" title="zhangzf的个人博客" type="application/atom+xml">
   
@@ -173,14 +173,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-http" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-vue路由变化页面不刷新问题" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      http
+      vue路由变化页面不刷新问题
     </h1>
   
 
@@ -192,8 +192,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2019/10/15/http/" class="archive-article-date">
-        <time datetime="2019-10-15T09:18:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-15</time>
+<a href="/2019/10/21/vue路由变化页面不刷新问题/" class="archive-article-date">
+        <time datetime="2019-10-21T01:46:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-21</time>
 </a>
 
   
@@ -206,7 +206,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1字</span>
+      <span class="post-count">186字</span>
     </span>
   </span>
 
@@ -226,7 +226,12 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="http"><a href="#http" class="headerlink" title="http"></a>http</h1><a id="more"></a>
+    <h1 id="vue路由变化页面不刷新"><a href="#vue路由变化页面不刷新" class="headerlink" title="vue路由变化页面不刷新"></a>vue路由变化页面不刷新</h1><a id="more"></a>
+
+<p>出现这种情况是因为依赖路由的params参数获取写在created生命周期里面，因为相同路由二次甚至多次加载的关系，没有达到监听，退出页面再进入另一个文章页面并不会运行created组件生命周期，导致文章数据还是第一次进入的数据</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 解决：watch监听路由是否变化</span></span><br><span class="line">watch:&#123;</span><br><span class="line">	<span class="comment">// way1</span></span><br><span class="line">	<span class="string">'$route'</span>(to,<span class="keyword">from</span>)&#123; <span class="comment">// 监听路由是否变化</span></span><br><span class="line">		<span class="keyword">if</span>(<span class="keyword">this</span>.$route.params.articleId)&#123;  <span class="comment">// 判断传递值的变化</span></span><br><span class="line">			<span class="comment">// 获取文章数据</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// way2</span></span><br><span class="line">	<span class="string">'$route'</span>(to,<span class="keyword">from</span>)&#123; </span><br><span class="line">		<span class="keyword">if</span>(to.path == <span class="string">"/page"</span>)&#123;  <span class="comment">// 监听路由名 监听从什么路由跳转过来的</span></span><br><span class="line">			<span class="keyword">this</span>.message = <span class="keyword">this</span>.$route.query.msg</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
     
 
     
@@ -240,7 +245,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://zhangzf99.github.io/2019/10/15/http/" title="http" target="_blank">https://zhangzf99.github.io/2019/10/15/http/</a>
+          <a href="https://zhangzf99.github.io/2019/10/21/vue路由变化页面不刷新问题/" title="vue路由变化页面不刷新问题" target="_blank">https://zhangzf99.github.io/2019/10/21/vue路由变化页面不刷新问题/</a>
         </li>
         <li>
           <strong>版权声明： </strong>
@@ -259,7 +264,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">http</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">vue 路由 刷新</a>
         		</li>
       		
 		</ul>
@@ -315,7 +320,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://zhangzf99.github.io/2019/10/15/http/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://zhangzf99.github.io/2019/10/21/vue路由变化页面不刷新问题/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -330,18 +335,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/10/15/mvc-mvvm区别/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/10/21/Token的设置/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          mvc mvvm区别
+          Token的设置
         
       </div>
     </a>
   
   
-    <a href="/2019/10/15/promise/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">promise</div>
+    <a href="/2019/10/21/vue-异步回调this/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vue 异步回调this</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -368,7 +373,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#http"><span class="toc-number">1.</span> <span class="toc-text">http</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#vue路由变化页面不刷新"><span class="toc-number">1.</span> <span class="toc-text">vue路由变化页面不刷新</span></a></li></ol>
                     </div>
                 </span>
             </div>
