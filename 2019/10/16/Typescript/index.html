@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="zhangzf的个人博客">
 <meta property="og:description" content="Typescript">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-18T08:04:02.581Z">
+<meta property="og:updated_time" content="2019-10-22T08:46:20.333Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Typescript">
 <meta name="twitter:description" content="Typescript">
@@ -505,7 +505,7 @@ typescript可处理已有的javascript代码，并对其中的Typescript代码�
 <p>​    1、对于静态成员来说是类的构造函数，对于实例成员是类的原型对象</p>
 <p>​    2、方法的名字</p>
 <p>​    3、参数在函数参数列表中的索引</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">logParams</span>(<span class="params">params:<span class="built_in">any</span></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">target:<span class="built_in">any</span>,methodName:<span class="built_in">any</span>,methodIndex:<span class="built_in">any</span></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(params);</span><br><span class="line">    <span class="built_in">console</span>.log(target);</span><br><span class="line">    <span class="built_in">console</span>.log(methodName);</span><br><span class="line">    <span class="built_in">console</span>.log(methodIndex);</span><br><span class="line">    </span><br><span class="line">    target.apiUrl = params</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">calss HttpClient&#123;</span><br><span class="line">  <span class="keyword">public</span> url:<span class="built_in">any</span> | <span class="literal">undefined</span>;</span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"></span>)&#123;</span><br><span class="line">    </span><br><span class="line">  &#125;</span><br><span class="line">  getData(<span class="meta">@logParams</span>(<span class="string">'xxxx'</span>) uuid:<span class="built_in">any</span>)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'我是getData中的方法'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> http:<span class="built_in">any</span> = <span class="keyword">new</span> HttpClient();</span><br><span class="line">http.getData(<span class="number">123456</span>);</span><br><span class="line"><span class="built_in">console</span>.log(http.apiUrl);</span><br></pre></td></tr></table></figure>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">logParams</span>(<span class="params">params:<span class="built_in">any</span></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">target:<span class="built_in">any</span>,methodName:<span class="built_in">any</span>,paramsIndex:<span class="built_in">any</span></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(params);</span><br><span class="line">    <span class="built_in">console</span>.log(target);</span><br><span class="line">    <span class="built_in">console</span>.log(methodName);</span><br><span class="line">    <span class="built_in">console</span>.log(paramsIndex);</span><br><span class="line">    </span><br><span class="line">    target.apiUrl = params</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">calss HttpClient&#123;</span><br><span class="line">  <span class="keyword">public</span> url:<span class="built_in">any</span> | <span class="literal">undefined</span>;</span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"></span>)&#123;</span><br><span class="line">    </span><br><span class="line">  &#125;</span><br><span class="line">  getData(<span class="meta">@logParams</span>(<span class="string">'xxxx'</span>) uuid:<span class="built_in">any</span>)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'我是getData中的方法'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> http:<span class="built_in">any</span> = <span class="keyword">new</span> HttpClient();</span><br><span class="line">http.getData(<span class="number">123456</span>);</span><br><span class="line"><span class="built_in">console</span>.log(http.apiUrl);</span><br></pre></td></tr></table></figure>
 
 
     
@@ -797,27 +797,15 @@ typescript可处理已有的javascript代码，并对其中的Typescript代码�
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">bootcdn</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">token</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color4">es6</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">react 背景色 背景图</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">http</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vue 定时器</a>
+                <a href="javascript:void(0)" class="js-tag color3">bootcdn</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -825,11 +813,19 @@ typescript可处理已有的javascript代码，并对其中的Typescript代码�
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue 改背景色</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue 异步回调 this</a>
+                <a href="javascript:void(0)" class="js-tag color5">http</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">NodeJS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -837,15 +833,15 @@ typescript可处理已有的javascript代码，并对其中的Typescript代码�
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vue 背景图</a>
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">vue 主题 vue-element-admin</a>
+                <a href="javascript:void(0)" class="js-tag color2">vue ts</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">vue 路由 刷新</a>
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -857,11 +853,7 @@ typescript可处理已有的javascript代码，并对其中的Typescript代码�
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color2">javascript高级程序设计</a>
               </li>
             
             <div class="clearfix"></div>
